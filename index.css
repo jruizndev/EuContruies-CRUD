@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Itim';
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    /* me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+
+header {
+    padding: 2vw;
+}
+
+h1 {
+    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PF Square Sans Pro', sans-serif;
+}
+
+.tableContainer {
+    background-image: url(/src/img/europe.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2vw;
+    display: flex;
+    justify-content: center;
+}
+/* Tabla */
+table {
+    width: 90%;
+    border: 2px solid black;
+    border-collapse: collapse;
+}
+
+/* Encabezado de la tabla */
+.categories {
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    font-family: 'PF Square Sans Pro', sans-serif;
+}
+
+th {
+    background-color: rgb(255, 255, 145);
+    color: blue;
+}
+
+.editBtn,
+.deleteBtn {
+    width: 45%;
+    border-radius: 5px;
+    font-size: 2vh;
+    font-family: 'PF Square Sans Pro', sans-serif;
+}
+
+.addCountry {
+    display: flex;
+    justify-content: row;
+    justify-content: center;
+    width: 90%;
+    gap: 4vw;
+}
+
+.addInput {
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+}
+
+.addBtn {
+    width: 13vw;
+    border-radius: 5px;
+    font-size: 2vh;
+    font-family: 'PF Square Sans Pro', sans-serif;
+}

@@ -1,0 +1,212 @@
+{
+  "euCountries": [
+    {
+      "id": "2",
+      "name": "Austria",
+      "population": 9158750,
+      "pibMillEuro": 478190,
+      "eurozone": true,
+      "adhesionYear": 1995
+    },
+    {
+      "id": "3",
+      "name": "Bélgica",
+      "population": 11832049,
+      "pibMillEuro": 584699,
+      "eurozone": true,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "4",
+      "name": "Bulgaria",
+      "population": 6445481,
+      "pibMillEuro": 93948,
+      "eurozone": false,
+      "adhesionYear": 2007
+    },
+    {
+      "id": "5",
+      "name": "Chequia",
+      "population": 10900555,
+      "pibMillEuro": 317387,
+      "eurozone": false,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "6",
+      "name": "Chipre",
+      "population": 933505,
+      "pibMillEuro": 29807,
+      "eurozone": true,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "7",
+      "name": "Croacia",
+      "population": 3861967,
+      "pibMillEuro": 76472,
+      "eurozone": true,
+      "adhesionYear": 2013
+    },
+    {
+      "id": "8",
+      "name": "Dinamarca",
+      "population": 5961249,
+      "pibMillEuro": 376430,
+      "eurozone": false,
+      "adhesionYear": 1973
+    },
+    {
+      "id": "9",
+      "name": "Eslovaquia",
+      "population": 5428792,
+      "pibMillEuro": 136867,
+      "eurozone": true,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "10",
+      "name": "Eslovenia",
+      "population": 2103309,
+      "pibMillEuro": 62436,
+      "eurozone": true,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "11",
+      "name": "España",
+      "population": 47351567,
+      "pibMillEuro": 1420912,
+      "eurozone": true,
+      "adhesionYear": 1986
+    },
+    {
+      "id": "12",
+      "name": "Estonia",
+      "population": 1295865,
+      "pibMillEuro": 37088,
+      "eurozone": true,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "13",
+      "name": "Finlandia",
+      "population": 5536146,
+      "pibMillEuro": 286940,
+      "eurozone": true,
+      "adhesionYear": 1995
+    },
+    {
+      "id": "14",
+      "name": "Francia",
+      "population": 67564251,
+      "pibMillEuro": 2873084,
+      "eurozone": true,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "15",
+      "name": "Grecia",
+      "population": 10416541,
+      "pibMillEuro": 224094,
+      "eurozone": true,
+      "adhesionYear": 1981
+    },
+    {
+      "id": "16",
+      "name": "Hungría",
+      "population": 9684900,
+      "pibMillEuro": 176911,
+      "eurozone": false,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "17",
+      "name": "Irlanda",
+      "population": 5260400,
+      "pibMillEuro": 504500,
+      "eurozone": true,
+      "adhesionYear": 1973
+    },
+    {
+      "id": "18",
+      "name": "Italia",
+      "population": 58615542,
+      "pibMillEuro": 1875547,
+      "eurozone": true,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "19",
+      "name": "Letonia",
+      "population": 1770326,
+      "pibMillEuro": 37394,
+      "eurozone": true,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "20",
+      "name": "Lituania",
+      "population": 2551213,
+      "pibMillEuro": 60229,
+      "eurozone": true,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "21",
+      "name": "Luxemburgo",
+      "population": 660809,
+      "pibMillEuro": 84274,
+      "eurozone": true,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "22",
+      "name": "Malta",
+      "population": 516100,
+      "pibMillEuro": 16813,
+      "eurozone": true,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "23",
+      "name": "Países Bajos",
+      "population": 17507456,
+      "pibMillEuro": 1023653,
+      "eurozone": true,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "24",
+      "name": "Polonia",
+      "population": 37623793,
+      "pibMillEuro": 744590,
+      "eurozone": false,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "25",
+      "name": "Portugal",
+      "population": 10295909,
+      "pibMillEuro": 263082,
+      "eurozone": true,
+      "adhesionYear": 1986
+    },
+    {
+      "id": "26",
+      "name": "Rumanía",
+      "population": 18710700,
+      "pibMillEuro": 290800,
+      "eurozone": false,
+      "adhesionYear": 2007
+    },
+    {
+      "id": "27",
+      "name": "Suecia",
+      "population": 10480947,
+      "pibMillEuro": 583398,
+      "eurozone": false,
+      "adhesionYear": 1995
+    }
+  ]
+}
