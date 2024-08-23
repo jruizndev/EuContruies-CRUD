@@ -21,16 +21,11 @@ async function showCountries() {
             <tr>
                 <td>${country.name}</td>
                 <td>${country.population}</td>
-                <td>${country.pibMillEuro}</td> 
-                <td>${country.eurozone ? 'Sí' : 'No'}</td>
+                <td>${country.gdp}</td> 
                 <td>${country.adhesionYear}</td>
                 <td>
-                    <button class="editBtn" onclick="editCountry('${
-                        country.id
-                    }')">Editar</button>
-                    <button class="deleteBtn" onclick="deleteCountry('${
-                        country.id
-                    }', '${country.name}')">Eliminar</button>
+                    <button class="editBtn" onclick="editCountry('${country.id}')">Editar</button>
+                    <button class="deleteBtn" onclick="deleteCountry('${country.id}', '${country.name}')">Eliminar</button>
                 </td>
             </tr>
         `
@@ -40,7 +35,8 @@ async function showCountries() {
 
 showCountries()
 
-// Función para eliminar un país la usames más adelante le creamos un props que recibirá en ID
+//DELETE method: DELETE
+
 async function deleteCountry(id, name) {
     let userConfirmation = window.confirm(
         `¿Estas seguro de que ${name} abandone la Unión Europea?`
@@ -49,7 +45,6 @@ async function deleteCountry(id, name) {
         window.alert(`${name} permanece en la Unión Europea`)
     } else {
         try {
-            // Creamos una variable response y con fetch le decimos con `` basticks, que la url es igual a EuCountries / y el ID que le mandaremos luego
             let response = await fetch(`${baseUrl}/${id}`, {
                 method: 'DELETE',
                 headers: {
@@ -59,11 +54,8 @@ async function deleteCountry(id, name) {
 
             // Creamos un if para que cuando la respuesta de la función eliminar sea OK que imprima ejecute la función que queremos como console.log y que muestre los países
             if (response.ok) {
-                console.log(`${name} eliminado correctamente.`)
-
                 // Actualizar la lista de países después de eliminar
                 await getEuCountries()
-
                 // Mostrar el alert solo después de una eliminación exitosa
                 window.alert(`${name} abandona la Unión Europea`)
             } else {
@@ -74,30 +66,49 @@ async function deleteCountry(id, name) {
         }
     }
 }
-// async function deleteCountry() {
-//     const tbody = document.querySelector('tbody')
-//     const countries = await deleteEuCountries()
 
-//     tbody.innerHTML = countries
-//         .map(
-//             (country) => `
-//                     <tr>
-//                         <td>${country.name}</td>
-//                         <td>${country.population}</td>
-//                         <td>${country.pibE}</td>
-//                         <td>${country.eurozone ? 'Sí' : 'No'}</td>
-//                         <td>${country.adhesionYear}</td>
-//                     </tr>
-//                 `
-//         )
-//         .delete()
-// }
+//CREATE method: POST
 
-// //CREATE method: POST URL http://localhost:3000/euCountries
-// async function createCountries() {}
+async function addCountry() {
+    const form = document.querySelector('#addCountry')
+    const formData = new FormData(form)
+    const newCountry = {
+        name: formData.get('name'),
+        population: formData.get('population'),
+        gdp: formData.get('gdp'),
+        adhesionYear: formData.get('adhesionYear'),
+    }
 
-// //DELETE method: DELETE URL http://localhost:3000/euCountries
-// async function deleteCountries() {}
+    const countryName = newCountry.name
+
+    // Confirmar con el usuario antes de enviar
+    const userConfirmed = window.confirm(
+        `¿Estás seguro de que quieres que ${countryName} ingrese en la Unión Europea?`
+    )
+    if (!userConfirmed) {
+        return // Si el usuario cancela, salir de la función
+    }
+    console.log(newCountry)
+    try {
+        let response = await fetch(`${baseUrl}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newCountry),
+        })
+
+        // Verificar si la solicitud fue exitosa
+        if (response.ok) {
+            const result = await response.json()
+            alert(`${countryName} ingresa en la Unión Europea`)
+        } else {
+            throw new Error('Error en la solicitud: ' + response.statusText)
+        }
+    } catch (error) {
+        // Manejar errores de la solicitud
+        alert('Hubo un problema al añadir a ${countryName}: ' + error.message)
+        console.error('Error:', error)
+    }
+}
 
 // fetch('http://localhost:3000/countries')
 //     .then((response) => response.json())

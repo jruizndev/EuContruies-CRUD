@@ -22,7 +22,6 @@
                             <th id="atributes">Nombre</th>
                             <th id="atributes">Población</th>
                             <th id="atributes">Pib (Mill €)</th>
-                            <th id="atributes">Eurozona</th>
                             <th id="atributes">Año de adhesión</th>
                             <th id="atributes">Acciones</th>
                         </tr>
@@ -30,15 +29,35 @@
                 </tbody>
             </table>
         </div>
-        <section class="addCountry">
-            <input class="addInput" type="text" />
-            <input class="addInput" type="text" />
-            <input class="addInput" type="text" />
-            <input class="addInput" type="text" />
-            <input class="addInput" type="text" />
-            <input class="addInput" type="text" />
-            <button class="addBtn">Añadir</button>
-        </section>
+        <form class="newCountry" id="addCountry">
+            <input
+                class="addInput"
+                type="text"
+                name="name"
+                placeholder="Nombre del país"
+            />
+            <input
+                class="addInput"
+                type="number"
+                name="population"
+                placeholder="Población"
+            />
+            <input
+                class="addInput"
+                type="number"
+                name="gdp"
+                placeholder="Pib (Mill€)"
+            />
+            <input
+                class="addInput"
+                type="number"
+                name="adhesionYear"
+                placeholder="Año de adhesion"
+            />
+            <button type="button" class="addBtn" onclick="addCountry()">
+                Añadir País
+            </button>
+        </form>
         <script src="/src/services.js"></script>
     </body>
 </html>

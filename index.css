@@ -64,7 +64,7 @@ th {
     font-family: 'PF Square Sans Pro', sans-serif;
 }
 
-.addCountry {
+.newCountry {
     display: flex;
     justify-content: row;
     justify-content: center;
