@@ -4,15 +4,22 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "apiFake": "json-server --watch server/db.json"
+        "apiFake": "json-server --watch server/db.json",
+        "tailwind": "npx tailwindcss -i ./src/index.css -o ./public/index.css --watch"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "description": "",
     "dependencies": {
+        "@tailwindcss/forms": "^0.5.7",
+        "autoprefixer": "^10.4.20",
         "json-server": "^1.0.0-beta.2",
+        "postcss": "^8.4.41",
         "sweetalert": "^2.1.2",
         "sweetalert2": "^11.12.4"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.10"
     }
 }

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://unpkg.com/tailwindcss@3.2.1/dist/tailwind.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="index.css" />
+        <link
+            href="https://fonts.cdnfonts.com/css/pf-square-sans-pro"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="w-full justify-center">
+        <header class="w-f p-[2vw]">
+            <h1
+                class="w-full font-pf-square text-blue-600 text-[5vw] font-bold flex justify-center p-[1vw]"
+            >
+                Países de la Unión Europea
+            </h1>
+        </header>
+        <section
+            class="w-full bg-cover bg-center bg-no-repeat flex justify-center items-center"
+            style="background-image: url(img/europe.jpg)"
+        >
+            <table class="w-[90%] border-2 border-black mt-12 mb-12">
+                <tbody>
+                    <thead class="w-full">
+                        <tr>
+                            <th
+                                class="boder-1 border border-black p-8 text-center font-pf-square bg-yellow-300 text-blue-600"
+                                id="atributes"
+                            >
+                                Nombre
+                            </th>
+                            <th
+                                class="boder-1 border border-black p-8 text-center font-pf-square bg-yellow-300 text-blue-600"
+                                id="atributes"
+                            >
+                                Población
+                            </th>
+                            <th
+                                class="boder-1 border border-black p-8 text-center font-pf-square bg-yellow-300 text-blue-600"
+                                id="atributes"
+                            >
+                                Pib (Mill €)
+                            </th>
+                            <th
+                                class="boder-1 border border-black p-8 text-center font-pf-square bg-yellow-300 text-blue-600"
+                                id="atributes"
+                            >
+                                Año de adhesión
+                            </th>
+                            <th
+                                class="boder-1 border border-black p-8 text-center font-pf-square bg-yellow-300 text-blue-600"
+                                id="atributes"
+                            >
+                                Acciones
+                            </th>
+                        </tr>
+                    </thead>
+                </tbody>
+            </table>
+        </section>
+        <form
+            class="w-full flex flex-wrap justify-center gap-[4vw] p-4"
+            id="addCountry"
+        >
+            <input
+                class="w-[15vw] flex justify-center font-pf-square text-[1vw]"
+                type="text"
+                name="name"
+                id="countryName"
+                placeholder="Nombre del país"
+            />
+            <input
+                class="w-[15vw] flex justify-center font-pf-square text-[1vw]"
+                type="number"
+                name="population"
+                placeholder="Población"
+            />
+            <input
+                class="w-[15vw] flex justify-center font-pf-square text-[1vw]"
+                type="number"
+                name="gdp"
+                placeholder="Pib (Mill€)"
+            />
+            <input
+                class="w-[15vw] flex justify-center font-pf-square text-[1vw]"
+                type="number"
+                name="adhesionYear"
+                placeholder="Año de adhesion"
+            />
+            <button
+                type="button"
+                class="w-[15vw] border border-yellow-600 bg-green-500 text-green-950 rounded-md text-base font-pf-square text-[1vw] py-2 px-4 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-yellow-700"
+                onclick="addCountry()"
+            >
+                Añadir País
+            </button>
+        </form>
+        <script src="services.js"></script>
+    </body>
+</html>

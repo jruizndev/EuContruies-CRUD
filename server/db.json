@@ -1,200 +1,193 @@
 {
-    "euCountries": [
-        {
-            "id": "1",
-            "name": "Alemania",
-            "population": 83445000,
-            "gdp": 4122210,
-            "adhesionYear": 1958
-        },
-        {
-            "id": "2",
-            "name": "Austria",
-            "population": 9158750,
-            "gdp": 478190,
-            "adhesionYear": 1995
-        },
-        {
-            "id": "3",
-            "name": "Bélgica",
-            "population": 11832049,
-            "gdp": 584699,
-            "adhesionYear": 1958
-        },
-        {
-            "id": "4",
-            "name": "Bulgaria",
-            "population": 6445481,
-            "gdp": 93948,
-            "adhesionYear": 2007
-        },
-        {
-            "id": "5",
-            "name": "Chequia",
-            "population": 10900555,
-            "gdp": 317387,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "6",
-            "name": "Chipre",
-            "population": 933505,
-            "gdp": 29807,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "7",
-            "name": "Croacia",
-            "population": 3861967,
-            "gdp": 76472,
-            "adhesionYear": 2013
-        },
-        {
-            "id": "8",
-            "name": "Dinamarca",
-            "population": 5961249,
-            "gdp": 376430,
-            "adhesionYear": 1973
-        },
-        {
-            "id": "9",
-            "name": "Eslovaquia",
-            "population": 5428792,
-            "gdp": 136867,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "10",
-            "name": "Eslovenia",
-            "population": 2103309,
-            "gdp": 62436,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "11",
-            "name": "España",
-            "population": 47351567,
-            "gdp": 1420912,
-            "adhesionYear": 1986
-        },
-        {
-            "id": "12",
-            "name": "Estonia",
-            "population": 1295865,
-            "gdp": 37088,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "13",
-            "name": "Finlandia",
-            "population": 5536146,
-            "gdp": 286940,
-            "adhesionYear": 1995
-        },
-        {
-            "id": "14",
-            "name": "Francia",
-            "population": 67564251,
-            "gdp": 2873084,
-            "adhesionYear": 1958
-        },
-        {
-            "id": "15",
-            "name": "Grecia",
-            "population": 10416541,
-            "gdp": 224094,
-            "adhesionYear": 1981
-        },
-        {
-            "id": "16",
-            "name": "Hungría",
-            "population": 9684900,
-            "gdp": 176911,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "17",
-            "name": "Irlanda",
-            "population": 5260400,
-            "gdp": 504500,
-            "adhesionYear": 1973
-        },
-        {
-            "id": "18",
-            "name": "Italia",
-            "population": 58615542,
-            "gdp": 1875547,
-            "adhesionYear": 1958
-        },
-        {
-            "id": "19",
-            "name": "Letonia",
-            "population": 1770326,
-            "gdp": 37394,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "20",
-            "name": "Lituania",
-            "population": 2551213,
-            "gdp": 60229,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "21",
-            "name": "Luxemburgo",
-            "population": 660809,
-            "gdp": 84274,
-            "adhesionYear": 1958
-        },
-        {
-            "id": "22",
-            "name": "Malta",
-            "population": 516100,
-            "gdp": 16813,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "23",
-            "name": "Países Bajos",
-            "population": 17507456,
-            "gdp": 1023653,
-            "adhesionYear": 1958
-        },
-        {
-            "id": "24",
-            "name": "Polonia",
-            "population": 37623793,
-            "gdp": 744590,
-            "adhesionYear": 2004
-        },
-        {
-            "id": "25",
-            "name": "Portugal",
-            "population": 10295909,
-            "gdp": 263082,
-            "adhesionYear": 1986
-        },
-        {
-            "id": "26",
-            "name": "Rumanía",
-            "gdp": 18710700,
-            "gdp": 290800,
-            "adhesionYear": 2007
-        },
-        {
-            "id": "27",
-            "name": "Suecia",
-            "population": 10480947,
-            "gdp": 583398,
-            "adhesionYear": 1995
-        },
-        {
-            "id": "715b",
-            "name": "Serbia",
-            "population": "1000000",
-            "gdp": "583398",
-            "adhesionYear": "2024"
-        }
-    ]
+  "euCountries": [
+    {
+      "id": "1",
+      "name": "Alemania",
+      "population": 83445000,
+      "gdp": 4122210,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "2",
+      "name": "Austria",
+      "population": 9158750,
+      "gdp": 478190,
+      "adhesionYear": 1995
+    },
+    {
+      "id": "3",
+      "name": "Bélgica",
+      "population": 11832049,
+      "gdp": 584699,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "4",
+      "name": "Bulgaria",
+      "population": 6445481,
+      "gdp": 93948,
+      "adhesionYear": 2007
+    },
+    {
+      "id": "5",
+      "name": "Chequia",
+      "population": 10900555,
+      "gdp": 317387,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "6",
+      "name": "Chipre",
+      "population": 933505,
+      "gdp": 29807,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "7",
+      "name": "Croacia",
+      "population": 3861967,
+      "gdp": 76472,
+      "adhesionYear": 2013
+    },
+    {
+      "id": "8",
+      "name": "Dinamarca",
+      "population": 5961249,
+      "gdp": 376430,
+      "adhesionYear": 1973
+    },
+    {
+      "id": "9",
+      "name": "Eslovaquia",
+      "population": 5428792,
+      "gdp": 136867,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "10",
+      "name": "Eslovenia",
+      "population": 2103309,
+      "gdp": 62436,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "11",
+      "name": "España",
+      "population": 47351567,
+      "gdp": 1420912,
+      "adhesionYear": 1986
+    },
+    {
+      "id": "12",
+      "name": "Estonia",
+      "population": 1295865,
+      "gdp": 37088,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "13",
+      "name": "Finlandia",
+      "population": 5536146,
+      "gdp": 286940,
+      "adhesionYear": 1995
+    },
+    {
+      "id": "14",
+      "name": "Francia",
+      "population": 67564251,
+      "gdp": 2873084,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "15",
+      "name": "Grecia",
+      "population": 10416541,
+      "gdp": 224094,
+      "adhesionYear": 1981
+    },
+    {
+      "id": "16",
+      "name": "Hungría",
+      "population": 9684900,
+      "gdp": 176911,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "17",
+      "name": "Irlanda",
+      "population": 5260400,
+      "gdp": 504500,
+      "adhesionYear": 1973
+    },
+    {
+      "id": "18",
+      "name": "Italia",
+      "population": 58615542,
+      "gdp": 1875547,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "19",
+      "name": "Letonia",
+      "population": 1770326,
+      "gdp": 37394,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "20",
+      "name": "Lituania",
+      "population": 2551213,
+      "gdp": 60229,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "21",
+      "name": "Luxemburgo",
+      "population": 660809,
+      "gdp": 84274,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "22",
+      "name": "Malta",
+      "population": 516100,
+      "gdp": 16813,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "23",
+      "name": "Países Bajos",
+      "population": 17507456,
+      "gdp": 1023653,
+      "adhesionYear": 1958
+    },
+    {
+      "id": "24",
+      "name": "Polonia",
+      "population": 37623793,
+      "gdp": 744590,
+      "adhesionYear": 2004
+    },
+    {
+      "id": "25",
+      "name": "Portugal",
+      "population": 10295909,
+      "gdp": 263082,
+      "adhesionYear": 1986
+    },
+    {
+      "id": "26",
+      "name": "Rumanía",
+      "population": 18710700,
+      "gdp": 290800,
+      "adhesionYear": 2007
+    },
+    {
+      "id": "27",
+      "name": "Suecia",
+      "population": 10480947,
+      "gdp": 583398,
+      "adhesionYear": 1995
+    }
+  ]
 }
