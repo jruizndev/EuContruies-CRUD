@@ -19,12 +19,12 @@ async function showCountries() {
         .map(
             (country) => `
             <tr>
-                <td class="border border-black p-2 text-center font-pf-square">${country.name}</td>
-                <td class="border border-black p-2 text-center font-pf-square">${country.population}</td>
-                <td class="border border-black p-2 text-center font-pf-square">${country.gdp}</td>
-                <td class="border border-black p-2 text-center font-pf-square">${country.adhesionYear}</td>
-                <td class="border border-black p-2 text-center">
-                    <button class="w-[45%] border border-blue-600 bg-yellow-300 text-yellow-800 rounded-md text-base font-pf-square text-[1vw] py-2 px-4 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="editCountry('${country.id}')">Editar</button>
+                <td class="border border-blue-700  text-center font-pf-square bg-blue-300" >${country.name}</td>
+                <td class="border border-blue-700  text-center font-pf-square bg-blue-300">${country.population}</td>
+                <td class="border border-blue-700  text-center font-pf-square bg-blue-300">${country.gdp}</td>
+                <td class="border border-blue-700  p-2 text-center font-pf-square bg-blue-300">${country.adhesionYear}</td>
+                <td class="border border-blue-700 p-2 text-center bg-blue-300">
+                    <button class="w-[45%] border border-yellow-500 bg-yellow-300 text-yellow-800 rounded-md text-base font-pf-square text-[1vw] py-2 px-4 hover:bg-yellow-400 focus:outline-none focus:ring-2 focus:ring-blue-500" onclick="openModal('${country.id}')">Actualizar</button>
                     <button class="w-[45%] border border-red-600 bg-red-700 text-white rounded-md text-base font-pf-square text-[1vw] py-2 px-4 hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-red-500" onclick="deleteCountry('${country.id}', '${country.name}')">Eliminar</button>
                 </td>
             </tr>
@@ -54,7 +54,6 @@ async function deleteCountry(id, name) {
 
             // Creamos un if para que cuando la respuesta de la función eliminar sea OK que imprima ejecute la función que queremos como console.log y que muestre los países
             if (response.ok) {
-                // Actualizar la lista de países después de eliminar
                 // Mostrar el alert solo después de una eliminación exitosa
                 window.alert(`${name} abandona la Unión Europea`)
             } else {
@@ -89,14 +88,13 @@ function capitalizeFirstLetter() {
 inputName.addEventListener('input', capitalizeFirstLetter)
 
 //ARRAY CON TODOS LOS PAÍSES DE EUROPA
-
 const europeanCountries = [
     'Albania',
     'Andorra',
     'Armenia',
     'Austria',
     'Azerbaijan',
-    'Belarus',
+    'Bielorrusia',
     'Bélgica',
     'Bosnia y herzegovina',
     'Bulgaria',
@@ -121,7 +119,7 @@ const europeanCountries = [
     'Lituania',
     'Luxemburgo',
     'Malta',
-    'Moldova',
+    'Moldavia',
     'Mónaco',
     'Montenegro',
     'Países bajos',
@@ -141,80 +139,83 @@ const europeanCountries = [
     'Turquía',
     'Ucrania',
     'Reino unido',
-    'Vaticano',
 ]
 
-//CREATE method: POST
-
-async function addCountry() {
-    const form = document.querySelector('#addCountry')
-    const formData = new FormData(form)
-    const newCountry = {
-        name: formData.get('name'),
-        population: formData.get('population'),
-        gdp: formData.get('gdp'),
-        adhesionYear: formData.get('adhesionYear'),
-    }
-
-    const countryName = newCountry.name
+async function validateCountry(countryName) {
+    const euCountries = await getEuCountries()
 
     // Verificar si el país está en la lista de países europeos
     if (!europeanCountries.includes(countryName)) {
         alert(`${countryName} no es un país de Europa`)
-        return // Salir de la función si el país no es válido
+        return false // Retorna false si el país no es válido
     }
-
-    // Obtener la lista actual de países de la UE
-    const euCountries = await getEuCountries()
 
     // Verificar si el país ya está en la lista de la UE
-    const countryExists = euCountries.some(
-        (country) => country.name === countryName
-    )
+    const countryExists = euCountries.includes(europeanCountries)
     if (countryExists) {
         alert(`${countryName} ya forma parte de la Unión Europea`)
-        return // Salir de la función si el país ya está en la UE
+        return false // Retorna false si el país ya está en la UE
     }
 
-    function validatePopulation(population) {
-        return population && !isNaN(population) && population > 0
-    }
+    return true // Retorna true si las validaciones son exitosas
+}
 
-    function validateGdp(gdp) {
-        return gdp && !isNaN(gdp) && gdp > 0
+function validatePopulation(population) {
+    if (population <= 33599) {
+        alert('La población mínima es 33600')
+        return false // Retorna false si la población no cumple con el requisito
     }
+    return true // Retorna true si la población es válida
+}
 
-    // Validaciones separadas para población y PIB
-    if (!validatePopulation(newCountry.population)) {
-        alert('Por favor, indique un valor válido para la Población')
-        return
+function validateGdp(gdp) {
+    if (gdp <= 1559) {
+        alert('El PIB (Mill€) mínimo es 1560')
+        return false // Retorna false si el PIB no cumple con el requisito
     }
+    return true // Retorna true si el PIB es válido
+}
 
-    if (!validateGdp(newCountry.gdp)) {
-        alert('Por favor, indique un valor válido para el PIB (Mill€)')
-        return
-    }
-
-    // Validar el año de adhesión (entre 1956 y la actualidad)
+function validateYear(adhesionYear) {
     const currentYear = new Date().getFullYear()
+    if (adhesionYear < 1958 || adhesionYear > currentYear) {
+        alert(`El año de adhesión debe estar entre 1958 y ${currentYear}.`)
+        return false // Retorna false si el año no es válido
+    }
+    return true // Retorna true si el año es válido
+}
+
+//CREATE method: POST
+async function addCountry() {
+    const form = document.getElementById('addCountry')
+    const formData = new FormData(form)
+    const newCountry = {
+        name: formData.get('name'),
+        population: formData.get('population'), // Convertir a número
+        gdp: formData.get('gdp'), // Convertir a número
+        adhesionYear: formData.get('adhesionYear'), // Convertir a número
+    }
+
+    // Validar el país, población, PIB, y año de adhesión antes de agregar
     if (
-        newCountry.adhesionYear < 1956 ||
-        newCountry.adhesionYear > currentYear
+        !(await validateCountry(newCountry.name)) ||
+        !validatePopulation(newCountry.population) ||
+        !validateGdp(newCountry.gdp) ||
+        !validateYear(newCountry.adhesionYear)
     ) {
-        alert(`El año de adhesión debe estar entre 1956 y ${currentYear}.`)
-        return // Salir de la función si el año no es válido
+        return // Salir de la función si alguna validación falla
     }
 
     // Confirmar con el usuario antes de enviar
     const userConfirmed = window.confirm(
-        `¿Estás seguro de que quieres que ${countryName} ingrese en la Unión Europea?`
+        `¿Estás seguro de que quieres que ${newCountry.name} ingrese en la Unión Europea?`
     )
     if (!userConfirmed) {
         return // Si el usuario cancela, salir de la función
     }
-    console.log(newCountry)
+
     try {
-        let response = await fetch(`${baseUrl}`, {
+        const response = await fetch(`${baseUrl}`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newCountry),
@@ -222,45 +223,97 @@ async function addCountry() {
 
         // Verificar si la solicitud fue exitosa
         if (response.ok) {
-            const result = await response.json()
-            alert(`${countryName} ingresa en la Unión Europea`)
-            await showCountries()
+            alert(`${newCountry.name} ingresa en la Unión Europea`)
+            await showCountries() // Actualizar la lista de países
         } else {
             throw new Error('Error en la solicitud: ' + response.statusText)
         }
     } catch (error) {
         // Manejar errores de la solicitud
-        alert('Hubo un problema al añadir a ${countryName}: ' + error.message)
+        alert(
+            `Hubo un problema al añadir a ${newCountry.name}: ` + error.message
+        )
         console.error('Error:', error)
     }
 }
-// fetch('http://localhost:3000/countries')
-//     .then((response) => response.json())
-//     .then((data) => console.log(data))
 
-// let countriesData
-// fetch('http://localhost:3000/countries')
-//     .then((response) => response.json())
-//     .then((data) => {
-//         // Asignamos el contenido de data a la variable
-//         countriesData = data
-//         console.log(countriesData) // Puedes ver el contenido en la consola
-//     })
+// Función para obtener un país por ID
+async function getEuCountryById(id) {
+    const response = await fetch(`${baseUrl}/${id}`, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' },
+    })
+    return response.json()
+}
 
-// function showCountries() {
-//     let countries = document.getElementById('countries')
-//     countries.textContent = countriesData
-//}
+// Función para mostrar el modal con los detalles del país para editar
+async function openModal(id) {
+    const country = await getEuCountryById(id)
 
-//obtener tarea por id
-// async function getTasckById (`baseurl/task/$(id)`, {
-//   const response = await fetch('http://localhost:3000/euCountries', {
-//     method: Get,
-//     headers: {
-//         "Content-Type": "application/json",
-//     },
-// }
-// );
-// const task = await response.json();
-// return task;
-// }
+    const modalContent = `
+        <div id="updateModal" class="fixed inset-0 bg-gray-600 bg-opacity-75 flex items-center justify-center">
+            <div class="bg-white rounded-lg p-6">
+                <h2 class="text-xl font-bold mb-4">Actualizar País</h2>
+                <form id="updateCountryForm">
+                    <label class="block mb-2">Nombre:</label>
+                    <input type="text" name="name" value="${country.name}" id="countryName" class="border border-black p-2 mb-4 w-full">
+                    
+                    <label class="block mb-2">Población:</label>
+                    <input type="number" name="population" value="${country.population}" class="border border-black p-2 mb-4 w-full">
+                    
+                    <label class="block mb-2">PIB:</label>
+                    <input type="number" name="gdp" value="${country.gdp}" class="border border-black p-2 mb-4 w-full">
+                    
+                    <label class="block mb-2">Año de adhesión:</label>
+                    <input type="number" name="adhesionYear" value="${country.adhesionYear}" class="border border-black p-2 mb-4 w-full">
+                    
+                    <div class="flex justify-end">
+                        <button type="button" onclick="updateCountry('${country.id}')" class="bg-yellow-300 text-yellow-800 rounded-md text-base px-4 py-2 mr-2 hover:bg-yellow-400">Guardar</button>
+                        <button type="button" onclick="closeModal()" class="bg-red-700 text-white rounded-md text-base px-4 py-2 hover:bg-red-800">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    `
+
+    document.body.insertAdjacentHTML('beforeend', modalContent)
+}
+
+// Función para cerrar el modal
+function closeModal() {
+    const modal = document.getElementById('updateModal')
+    if (modal) {
+        modal.remove()
+    }
+}
+
+// Función para guardar los cambios del país
+async function updateCountry(id) {
+    const form = document.getElementById('updateCountryForm')
+    const formData = new FormData(form)
+    const updatedCountry = {
+        name: formData.get('name'),
+        population: formData.get('population'),
+        gdp: formData.get('gdp'),
+        adhesionYear: formData.get('adhesionYear'),
+    }
+
+    try {
+        const response = await fetch(`${baseUrl}/${id}`, {
+            method: 'PUT', // Método PUT para actualizar
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedCountry),
+        })
+
+        if (response.ok) {
+            alert('País actualizado correctamente')
+            closeModal()
+            showCountries()
+        } else {
+            throw new Error('Error en la solicitud: ' + response.statusText)
+        }
+    } catch (error) {
+        alert('Hubo un problema al actualizar el país: ' + error.message)
+        console.error('Error:', error)
+    }
+}

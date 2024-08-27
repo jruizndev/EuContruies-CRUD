@@ -1,11 +1,11 @@
 {
   "euCountries": [
     {
-      "id": "1",
       "name": "Alemania",
       "population": 83445000,
       "gdp": 4122210,
-      "adhesionYear": 1958
+      "adhesionYear": 1958,
+      "id": "1"
     },
     {
       "id": "2",
@@ -134,13 +134,6 @@
       "adhesionYear": 2004
     },
     {
-      "id": "20",
-      "name": "Lituania",
-      "population": 2551213,
-      "gdp": 60229,
-      "adhesionYear": 2004
-    },
-    {
       "id": "21",
       "name": "Luxemburgo",
       "population": 660809,
@@ -169,13 +162,6 @@
       "adhesionYear": 2004
     },
     {
-      "id": "25",
-      "name": "Portugal",
-      "population": 10295909,
-      "gdp": 263082,
-      "adhesionYear": 1986
-    },
-    {
       "id": "26",
       "name": "Rumanía",
       "population": 18710700,
@@ -188,6 +174,13 @@
       "population": 10480947,
       "gdp": 583398,
       "adhesionYear": 1995
+    },
+    {
+      "name": "Noruega",
+      "population": "132332",
+      "gdp": "412132123",
+      "adhesionYear": "1989",
+      "id": "2a7e"
     }
   ]
 }
