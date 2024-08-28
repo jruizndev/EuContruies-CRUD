@@ -48,6 +48,7 @@ Make sure you have everything you need for Tailwind to work properly, including 
 npm install -D tailwindcss postcss autoprefixer
 npm install @tailwindcss/forms tailwindcss-textshadow
 ```
+
 ### 3. ⚙️ **Configure Tailwind:**
 Once the dependencies are installed, you can configure Tailwind CSS. Here are the basic steps to get started:
 
@@ -56,15 +57,7 @@ Once the dependencies are installed, you can configure Tailwind CSS. Here are th
 ```bash
 npx tailwindcss init
 ```
-### 3. ⚙️ **Configure Tailwind:**
-Once the dependencies are installed, you can configure Tailwind CSS. Here are the basic steps to get started:
-
-- Create the `tailwind.config.js` file if it doesn't exist:
-
-```bash
-npx tailwindcss init
-```
-### 3. ⚙️ **Configure Tailwind:**
+### 4. ⚙️ **Configure Tailwind:**
 Once the dependencies are installed, you can configure Tailwind CSS. Here are the basic steps to get started:
 
 - Add the configurations and plugins to the `tailwind.config.js` file as shown below:
@@ -84,21 +77,21 @@ module.exports = {
 }
 ```
 
-### 4. 📦 **Build the CSS with Tailwind:**
+### 5. 📦 **Build the CSS with Tailwind:**
 To have Tailwind generate the CSS that you will use in your project, run:
 
 ```bash
 npm run tailwind
 ```
 
-### 5. 🚀 **Start JSON Server:**
+### 6. 🚀 **Start JSON Server:**
 Start the JSON server to work with the Fake API:
 
 ```bash
 npm run apiFake
 ```
 
-### 6. 🎉 **Ready to use!**
+### 7. 🎉 **Ready to use!**
 Open `index.html` in your browser and start interacting with the list of countries.
 
 ## 🛠️ **Next Steps**
