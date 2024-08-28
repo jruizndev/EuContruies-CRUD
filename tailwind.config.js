@@ -8,11 +8,9 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                'pf-square': ['PF Square Sans Pro', 'sans-serif'], // Asegúrate de cargar esta fuente
+                'pf-square': ['PF Square Sans Pro', 'sans-serif'],
             },
         },
     },
-    plugins: [
-        require('@tailwindcss/forms'), // Plugin para formularios
-    ],
+    plugins: [require('@tailwindcss/forms'), require('tailwindcss-textshadow')],
 }
