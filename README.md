@@ -60,7 +60,17 @@ After cloning the project, navigate to the project directory and install the req
 npm install
 ```
 
-### 3. 📦 **Build the CSS with Tailwind:**
+### 3. ⚙️ **Configure Tailwind:**
+
+Once the dependencies are installed, you can configure Tailwind CSS. Here are the basic steps to get started:
+
+-   Create the `tailwind.config.js` file if it doesn't exist:
+
+```bash
+npx tailwindcss init
+```
+
+### 4. 📦 **Build the CSS with Tailwind:**
 
 To have Tailwind generate the CSS that you will use in your project, run:
 
@@ -68,7 +78,7 @@ To have Tailwind generate the CSS that you will use in your project, run:
 npm run tailwind
 ```
 
-### 4. 🚀 **Start JSON Server:**
+### 5. 🚀 **Start JSON Server:**
 
 Start the JSON server to work with the Fake API:
 
@@ -76,7 +86,7 @@ Start the JSON server to work with the Fake API:
 npm run apiFake
 ```
 
-### 5. 🎉 **Ready to use!**
+### 6. 🎉 **Ready to use!**
 
 Open `index.html` in your browser and start interacting with the list of countries.
 
