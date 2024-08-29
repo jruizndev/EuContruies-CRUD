@@ -39,23 +39,41 @@ First, clone the project to your local machine with the following command:
 
 ```bash
 git clone https://github.com/jruizndev/EuContruies-CRUD.git
+cd /EuContruies-CRUD
 ```
 
-### 2. 📦 **Build the CSS with Tailwind:**
+### 2. 🔧 **Install Tailwind CSS and the Necessary Plugins:**
+Make sure you have everything you need for Tailwind to work properly, including the plugins and the custom font:
+
+```bash
+npm install -D tailwindcss postcss autoprefixer
+npm install @tailwindcss/forms tailwindcss-textshadow
+```
+
+### 3. ⚙️ **Configure Tailwind:**
+Once the dependencies are installed, you can configure Tailwind CSS. Here are the basic steps to get started:
+
+- Create the `tailwind.config.js` file if it doesn't exist:
+
+```bash
+npx tailwindcss init
+```
+
+### 4. 📦 **Build the CSS with Tailwind:**
 To have Tailwind generate the CSS that you will use in your project, run:
 
 ```bash
 npm run tailwind
 ```
 
-### 3. 🚀 **Start JSON Server:**
+### 5. 🚀 **Start JSON Server:**
 Start the JSON server to work with the Fake API:
 
 ```bash
 npm run apiFake
 ```
 
-### 4. 🎉 **Ready to use!**
+### 6. 🎉 **Ready to use!**
 Open `index.html` in your browser and start interacting with the list of countries.
 
 ## 🛠️ **Next Steps**
