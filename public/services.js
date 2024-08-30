@@ -62,7 +62,6 @@ async function deleteCountry(id, name) {
         } catch (error) {
             console.error('Error trying to delete', error)
         }
-        await showCountries()
     }
 }
 
@@ -143,6 +142,7 @@ const europeanCountries = [
 
 //Validación si el país es europeo y si está ya en la lista json
 
+// Validación si el país es europeo y si está ya en la lista json
 async function validateCountry(countryName) {
     const euCountries = await getEuCountries()
 
@@ -153,13 +153,15 @@ async function validateCountry(countryName) {
     }
 
     // Verificar si el país ya está en la lista de la UE
-    const countryExists = euCountries.includes(europeanCountries)
+    const countryExists = euCountries.some(
+        (country) => country.name.toLowerCase() === countryName.toLowerCase()
+    )
     if (countryExists) {
-        alert(`${countryName} is now part of the European Union`)
-        return false // FALSE SI YA ESTA EN LA UE
+        alert(`${countryName} is already part of the European Union`)
+        return false //  Retorna false si el pais no esta en la ue
     }
 
-    return true //True si las validaciones son ok
+    return true // True si las validaciones son ok
 }
 
 //Validación por población
