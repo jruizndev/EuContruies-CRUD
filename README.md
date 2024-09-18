@@ -57,8 +57,7 @@ cd /EuContruies-CRUD
 Make sure you have everything you need for Tailwind to work properly, including the plugins and the custom font:
 
 ```bash
-npm install -D tailwindcss postcss autoprefixer
-npm install @tailwindcss/forms tailwindcss-textshadow
+npm install
 ```
 
 ### 4. 📦 **Build the CSS with Tailwind:**
