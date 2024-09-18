@@ -52,22 +52,13 @@ git clone https://github.com/jruizndev/EuContruies-CRUD.git
 cd /EuContruies-CRUD
 ```
 
-### 2. 🔧 **Install Project Dependencies:**
+### 2. 🔧 **Install Tailwind CSS and the Necessary Plugins:**
 
-After cloning the project, navigate to the project directory and install the required npm dependencies:
-
-```bash
-npm install
-```
-
-### 3. ⚙️ **Configure Tailwind:**
-
-Once the dependencies are installed, you can configure Tailwind CSS. Here are the basic steps to get started:
-
--   Create the `tailwind.config.js` file if it doesn't exist:
+Make sure you have everything you need for Tailwind to work properly, including the plugins and the custom font:
 
 ```bash
-npx tailwindcss init
+npm install -D tailwindcss postcss autoprefixer
+npm install @tailwindcss/forms tailwindcss-textshadow
 ```
 
 ### 4. 📦 **Build the CSS with Tailwind:**
