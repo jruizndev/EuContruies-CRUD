@@ -158,7 +158,7 @@ async function validateCountry(countryName) {
     )
     if (countryExists) {
         alert(`${countryName} is already part of the European Union`)
-        return false //  Retorna false si el pais no esta en la ue
+        return false //  Retorna false si el pais no esta en la unión europea
     }
 
     return true // True si las validaciones son ok
